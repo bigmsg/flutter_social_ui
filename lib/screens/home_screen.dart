@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_ui/widgets/following_users.dart';
+
+import '../data/data.dart';
+import '../models/user_model.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -44,16 +48,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ),
           indicatorWeight: 3.0,
           tabs: <Widget>[
-            Tab(
-              text: 'Trending'
-            ),
-            Tab(
-              text: 'Latest'
-            ),
+            Tab(text: 'Trending'),
+            Tab(text: 'Latest'),
           ],
         ),
       ),
-      body: Text('바디')
+      body: ListView(
+        children: <Widget>[
+          FollowingUsers(),
+        ]
+      ),
     );
   }
 }
